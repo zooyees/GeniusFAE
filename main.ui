@@ -658,7 +658,7 @@ Button */
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-image: url(:/images/images/images/Windlink.png);</string>
+              <string notr="true">background-image: url(:/images/images/images/GeniusFAE.png);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::NoFrame</enum>
@@ -685,7 +685,7 @@ Button */
               </font>
              </property>
              <property name="text">
-              <string>WLSC-GUI</string>
+              <string>Genius FAE</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -715,7 +715,7 @@ Button */
               </font>
              </property>
              <property name="text">
-              <string>Smart Charging</string>
+              <string/>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -837,43 +837,7 @@ Button */
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QGridLayout" name="gridLayout">
-                <item row="4" column="0">
-                 <widget class="QPushButton" name="btn_qi_prot">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>45</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Segoe UI</family>
-                    <pointsize>10</pointsize>
-                    <italic>false</italic>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons_png/images/icons_png/cil-rss.png);</string>
-                  </property>
-                  <property name="text">
-                   <string>Qi Protocol Analyzer</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="7" column="0">
+                <item row="5" column="0">
                  <spacer name="verticalSpacer">
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
@@ -885,42 +849,6 @@ Button */
                    </size>
                   </property>
                  </spacer>
-                </item>
-                <item row="6" column="0">
-                 <widget class="QPushButton" name="btn_chg_monitor">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>45</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Segoe UI</family>
-                    <pointsize>10</pointsize>
-                    <italic>false</italic>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons_png/images/icons_png/cil-chart-line.png);</string>
-                  </property>
-                  <property name="text">
-                   <string>Charging Monitor</string>
-                  </property>
-                 </widget>
                 </item>
                 <item row="1" column="0">
                  <widget class="QPushButton" name="btn_uart">
@@ -958,39 +886,23 @@ Button */
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0">
-                 <widget class="QPushButton" name="btn_wired_prot">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
+                <item row="0" column="0">
+                 <widget class="QPushButton" name="btn_hwcheck">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
                     <height>45</height>
                    </size>
                   </property>
-                  <property name="font">
-                   <font>
-                    <family>Segoe UI</family>
-                    <pointsize>10</pointsize>
-                    <italic>false</italic>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons_png/images/icons_png/cil-link-alt.png);</string>
+                   <string notr="true">background-image: url(:/icons_png/images/icons_png/cil-3d.png);</string>
                   </property>
                   <property name="text">
-                   <string>Wired Protocol Analyzer</string>
+                   <string>Hardware Check</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>C:/Users/roy zhao/.designer/backup/images/icons/cil-notes.png</normaloff>C:/Users/roy zhao/.designer/backup/images/icons/cil-notes.png</iconset>
                   </property>
                  </widget>
                 </item>
@@ -1036,23 +948,39 @@ Button */
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="0">
-                 <widget class="QPushButton" name="btn_config">
+                <item row="4" column="0">
+                 <widget class="QPushButton" name="btn_chg_monitor">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
                     <height>45</height>
                    </size>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI</family>
+                    <pointsize>10</pointsize>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons_png/images/icons_png/cil-bluetooth.png);</string>
+                   <string notr="true">background-image: url(:/icons_png/images/icons_png/cil-chart-line.png);</string>
                   </property>
                   <property name="text">
-                   <string>Device Config</string>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>C:/Users/roy zhao/.designer/backup/images/icons/cil-notes.png</normaloff>C:/Users/roy zhao/.designer/backup/images/icons/cil-notes.png</iconset>
+                   <string>Charging Monitor</string>
                   </property>
                  </widget>
                 </item>
@@ -1591,7 +1519,7 @@ Button */
                    </font>
                   </property>
                   <property name="text">
-                   <string>Charging Protocol Analyzer</string>
+                   <string>Genius FAE</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1870,7 +1798,7 @@ Button */
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="uart">
                       <property name="styleSheet">
@@ -1879,7 +1807,7 @@ background-position: center;
 background-repeat: no-repeat;</string>
                       </property>
                      </widget>
-                     <widget class="QWidget" name="config">
+                     <widget class="QWidget" name="hwcheck">
                       <widget class="QLabel" name="label_2">
                        <property name="geometry">
                         <rect>

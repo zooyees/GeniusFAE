@@ -1,19 +1,4 @@
 # ///////////////////////////////////////////////////////////////
-#
-# BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
-#
-# This project can be used freely for all uses, as long as they maintain the
-# respective credits only in the Python scripts, any information in the visual
-# interface (GUI) can be modified without any implication.
-#
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-#
-# ///////////////////////////////////////////////////////////////
-
 import sys
 import os
 import platform
@@ -45,8 +30,8 @@ class MainWindow(QMainWindow):
 
         # APP NAME
         # ///////////////////////////////////////////////////////////////
-        title = "Charging GUI"
-        description = "Charging Portocol Analyzer"
+        title = "Genius FAE"
+        description = "Genius FAE"
         # APPLY TEXTS
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
@@ -68,11 +53,11 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
 
         # LEFT MENUS
-        widgets.btn_config.clicked.connect(self.buttonClick)
+        widgets.btn_hwcheck.clicked.connect(self.buttonClick)
         widgets.btn_uart.clicked.connect(self.buttonClick)
         widgets.btn_i2c.clicked.connect(self.buttonClick)
-        widgets.btn_wired_prot.clicked.connect(self.buttonClick)
-        widgets.btn_qi_prot.clicked.connect(self.buttonClick)
+        # widgets.btn_wired_prot.clicked.connect(self.buttonClick)
+        # widgets.btn_qi_prot.clicked.connect(self.buttonClick)
         widgets.btn_chg_monitor.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
@@ -105,7 +90,7 @@ class MainWindow(QMainWindow):
 
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
-        widgets.stackedWidget.setCurrentWidget(widgets.config)
+        widgets.stackedWidget.setCurrentWidget(widgets.hwcheck)
         widgets.btn_uart.setStyleSheet(UIFunctions.selectMenu(widgets.btn_uart.styleSheet()))
 
 
@@ -118,8 +103,8 @@ class MainWindow(QMainWindow):
         btnName = btn.objectName()
 
         # SHOW HOME PAGE
-        if btnName == "btn_config":
-            widgets.stackedWidget.setCurrentWidget(widgets.config)
+        if btnName == "btn_hwcheck":
+            widgets.stackedWidget.setCurrentWidget(widgets.hwcheck)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
@@ -132,12 +117,6 @@ class MainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.i2c) # SET PAGE
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
-
-        # SHOW WIDGETS PAGE
-        if btnName == "btn_wired_prot":
-            widgets.stackedWidget.setCurrentWidget(widgets.wired_prot)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW NEW PAGE
         if btnName == "btn_qi_prot":
@@ -175,6 +154,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("icon.ico"))
+    app.setWindowIcon(QIcon("GeniusFAE.ico"))
     window = MainWindow()
     sys.exit(app.exec())

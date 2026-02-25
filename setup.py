@@ -3,20 +3,20 @@ import os
 from cx_Freeze import setup, Executable
 
 # ADD FILES
-files = ['icon.ico','themes/']
+files = ['GeniusFAE.ico','themes/']
 
 # TARGET
 target = Executable(
     script="main.py",
     base="Win32GUI",
-    icon="icon.ico"
+    icon="GeniusFAE.ico"
 )
 
 # SETUP CX FREEZE
 setup(
-    name = "WindLink",
+    name = "GeniusFAE",
     version = "1.0",
-    description = "Charging Protocol Analyzer",
+    description = "FAE support system.",
     author = "WindLink",
     options = {'build_exe' : {'include_files' : files}},
     executables = [target]

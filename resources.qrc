@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="images">
-    <file>icon.ico</file>
+    <file>images/images/GeniusFAE.png</file>
+    <file>images/images/GeniusFAE_vertical.png</file>
     <file>images/images/Windlink.png</file>
     <file>images/images/Windlink_vertical.png</file>
   </qresource>
