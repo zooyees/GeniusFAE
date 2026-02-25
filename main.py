@@ -7,6 +7,7 @@ import platform
 # ///////////////////////////////////////////////////////////////
 from modules import *
 from widgets import *
+from PySide6.QtCore import Qt, QEvent
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
@@ -59,6 +60,10 @@ class MainWindow(QMainWindow):
         # widgets.btn_wired_prot.clicked.connect(self.buttonClick)
         # widgets.btn_qi_prot.clicked.connect(self.buttonClick)
         widgets.btn_chg_monitor.clicked.connect(self.buttonClick)
+        
+        # AI DIALOG BUTTONS
+        widgets.btn_send.clicked.connect(self.buttonClick)
+        widgets.btn_add_file.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -92,6 +97,18 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         widgets.stackedWidget.setCurrentWidget(widgets.hwcheck)
         widgets.btn_uart.setStyleSheet(UIFunctions.selectMenu(widgets.btn_uart.styleSheet()))
+        
+        # CONNECT RETURN KEY TO SEND BUTTON
+        # ///////////////////////////////////////////////////////////////
+        widgets.ai_input.installEventFilter(self)
+        
+    def eventFilter(self, obj, event):
+        if obj == widgets.ai_input and event.type() == QEvent.KeyPress:
+            if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+                # Trigger button click
+                widgets.btn_send.click()
+                return True
+        return super().eventFilter(obj, event)
 
 
     # BUTTONS CLICK
@@ -129,6 +146,35 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
             # print("register BTN clicked!")
+
+        if btnName == "btn_send":
+            pass
+            # widgets.stackedWidget.setCurrentWidget(widgets.hwcheck) # SET PAGE
+            # UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
+            # btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
+
+        if btnName == "btn_add_file":
+            pass
+            # widgets.stackedWidget.setCurrentWidget(widgets.hwcheck) # SET PAGE
+            # UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
+            # btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
+
+        if btnName == "btn_send":
+            # Get message from input
+            message = widgets.ai_input.toPlainText().strip()
+            if message:
+                # Add message to output with right-aligned style
+                current_output = widgets.ai_output.toHtml()
+                new_message = f'<div style="text-align: right; margin: 10px 0;"><div style="display: inline-block; background-color: #dcf8c6; padding: 10px 15px; border-radius: 18px; max-width: 70%;">{message}</div></div>'
+                widgets.ai_output.setHtml(current_output + new_message)
+                
+                # Clear input
+                widgets.ai_input.clear()
+                
+                # Scroll to bottom
+                widgets.ai_output.verticalScrollBar().setValue(widgets.ai_output.verticalScrollBar().maximum())
+
+
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')

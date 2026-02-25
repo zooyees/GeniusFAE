@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QGridLay
     QGroupBox, QHBoxLayout, QHeaderView, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QStackedWidget, QTableWidget, QTableWidgetItem,
-    QVBoxLayout, QWidget)
+    QTextEdit, QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -1032,9 +1032,44 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.uart)
         self.hwcheck = QWidget()
         self.hwcheck.setObjectName(u"hwcheck")
-        self.label_2 = QLabel(self.hwcheck)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(480, 260, 131, 21))
+        self.verticalLayout_21 = QVBoxLayout(self.hwcheck)
+        self.verticalLayout_21.setSpacing(10)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.verticalLayout_21.setContentsMargins(10, 10, 10, 10)
+        self.ai_output = QTextEdit(self.hwcheck)
+        self.ai_output.setObjectName(u"ai_output")
+        self.ai_output.setReadOnly(True)
+
+        self.verticalLayout_21.addWidget(self.ai_output)
+
+        self.horizontalLayout_21 = QHBoxLayout()
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
+        self.ai_input = QTextEdit(self.hwcheck)
+        self.ai_input.setObjectName(u"ai_input")
+        self.ai_input.setMinimumSize(QSize(0, 25))
+        self.ai_input.setMaximumSize(QSize(16777215, 80))
+
+        self.horizontalLayout_21.addWidget(self.ai_input)
+
+        self.btn_add_file = QPushButton(self.hwcheck)
+        self.btn_add_file.setObjectName(u"btn_add_file")
+        self.btn_add_file.setMinimumSize(QSize(120, 25))
+        self.btn_add_file.setMaximumSize(QSize(16777215, 50))
+        self.btn_add_file.setStyleSheet(u"background-color: rgb(33, 150, 243); color: white;")
+
+        self.horizontalLayout_21.addWidget(self.btn_add_file)
+
+        self.btn_send = QPushButton(self.hwcheck)
+        self.btn_send.setObjectName(u"btn_send")
+        self.btn_send.setMinimumSize(QSize(120, 25))
+        self.btn_send.setMaximumSize(QSize(16777215, 50))
+        self.btn_send.setStyleSheet(u"background-color: rgb(76, 175, 80); color: white;")
+
+        self.horizontalLayout_21.addWidget(self.btn_send)
+
+
+        self.verticalLayout_21.addLayout(self.horizontalLayout_21)
+
         self.stackedWidget.addWidget(self.hwcheck)
         self.qi_prot = QWidget()
         self.qi_prot.setObjectName(u"qi_prot")
@@ -1455,7 +1490,10 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Register Tool", None))
+        self.ai_output.setPlaceholderText(QCoreApplication.translate("MainWindow", u"AI Output", None))
+        self.ai_input.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type your message...", None))
+        self.btn_add_file.setText(QCoreApplication.translate("MainWindow", u"Add File", None))
+        self.btn_send.setText(QCoreApplication.translate("MainWindow", u"Send", None))
         self.groupBox.setTitle("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"Protocol:", None))
         ___qtablewidgetitem = self.tableWidget_msg.horizontalHeaderItem(0)

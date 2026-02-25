@@ -36,7 +36,7 @@ class AppFunctions(MainWindow):
         self.ui.btn_uart.setStyleSheet("background-color: #6272a4;")
         self.ui.btn_i2c.setStyleSheet("background-color: #6272a4;")
         # self.ui.btn_wired_prot.setStyleSheet("background-color: #6272a4;")
-        self.ui.btn_qi_prot.setStyleSheet("background-color: #6272a4;")
+        # self.ui.btn_qi_prot.setStyleSheet("background-color: #6272a4;")
         self.ui.btn_chg_monitor.setStyleSheet("background-color: #6272a4;")
 
 
