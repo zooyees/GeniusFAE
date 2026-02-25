@@ -93,7 +93,7 @@ Left Menu */
 	background-color: rgb(40, 44, 52);
 }
 #topMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
+	background-color: rgb(166, 113, 216);
 	color: rgb(255, 255, 255);
 }
 #bottomMenu .QPushButton {	
